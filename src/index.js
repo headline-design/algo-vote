@@ -29,7 +29,7 @@ document.getElementById("vote-root").innerHTML = `
 <button id="check">Check</button>
 </div>`
 
-//uncomment to test window.voteConfig
+//uncomment to test window.voteConfig. re-comment before publishing!
 window.voteConfig = {title: "Test Poll", asaIndex: 1234567, appId: 1234567, a: "hello world", b: "goodbye world"}
 
 if (window.voteConfig !== undefined){
@@ -94,7 +94,7 @@ function checkVote() {
     })
 }
 
-setInterval(toggleBorder,100)
+//setInterval(toggleBorder,100)
 
 var on = false
 var colora = "8px solid green"
