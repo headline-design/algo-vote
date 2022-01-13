@@ -164,7 +164,7 @@ function checkVote() {
     })
 }
 
-setInterval(toggleBorder,100)
+//setInterval(toggleBorder,100)
 
 var on = false
 var colora = ""

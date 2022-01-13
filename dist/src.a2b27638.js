@@ -52700,9 +52700,9 @@ function checkVote() {
       b: btally
     }; //alert("Voting tallies: Option 1: " + atally + ", Option 2: " + btally)
   });
-}
+} //setInterval(toggleBorder,100)
 
-setInterval(toggleBorder, 100);
+
 var on = false;
 var colora = "";
 var colorb = "";
@@ -52748,7 +52748,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38585" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34695" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
