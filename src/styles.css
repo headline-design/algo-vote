@@ -133,12 +133,36 @@
   justify-content: center
 }
 
-button#AlgoSigner:hover,button#wallet-connect:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
+button#AlgoSigner:hover,button#wallet-connect:hover,button#fee-btn:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
   font-weight: 600;
   box-shadow: 0 4px 10px rgb(0 0 0/10%);
   border-color: var(--primary-color-lightest);
   border-width: 1px;
   background: #27303f
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.fees-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.footer__menu {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: stretch;
+  flex-direction: row;
 }
 
 
@@ -198,10 +222,15 @@ button#candidatea {
 }
 
 button#fee-btn {
-  display: flex
+  display: flex;
+  transition: border-color .2s ease-in-out;
 }
 
-button#AlgoSigner:focus,button#WalletConnect:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
+button#fee-btn:focus {
+color: var(--primary-color-lightest) !important;
+}
+
+button#AlgoSigner:focus,button#WalletConnect:focus,button#fee-btn:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
   color: #fff;
   border-color: var(--primary-color)
 }
@@ -248,14 +277,6 @@ button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,button#candidateb,but
   transition: border-color .2s ease-in-out;
   border: var(--border)!important;
   border-radius: 8px
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  align-items: stretch;
-  flex-direction: column
 }
 
 div[class*=pipeline-select]>div:hover {
@@ -1616,26 +1637,16 @@ button#options-btn {
   list-style: none
 }
 
-.footer__menu__list button {
-  width: 100%;
-  display: block;
-  padding: 6px;
-  text-align: left;
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 14px;
-  text-transform: capitalize;
-  background-color: transparent;
-  color: #fff;
-  color: var(--clr-white);
-  border: 0;
-  border-radius: 4px;
-  white-space: nowrap;
-  transition: background-color .2s ease-in-out
+button#fee-btn:disabled {
+  opacity: 50%;
 }
 
-.footer__menu__list button:focus,.footer__menu__list button:hover {
-  background: #2e93f7
+button#fee-btn {
+  opacity: 100%;
+}
+
+button#info {
+  margin-right: 0.5rem;
 }
 
 .msg {
