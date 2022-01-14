@@ -872,7 +872,8 @@ button:enabled {
 
 button:disabled {
   cursor: not-allowed;
-  pointer-events: all!important
+  pointer-events:
+   all!important
 }
 
 .balance button {
