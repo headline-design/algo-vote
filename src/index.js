@@ -21,7 +21,7 @@ document.getElementById("vote-root").innerHTML = `<div class="fees">
 <div id="votediv" class="swap-form" align="center">
 <h1 id="voteTitle">Algoo Voot</h1>
 <br>
-<br><br>
+<br>
 <div class="swap-container">
 <div class="swap-field">
 <label class="swap-field__label label">App</label>
@@ -34,17 +34,19 @@ document.getElementById("vote-root").innerHTML = `<div class="fees">
 <label class="swap-field__label label">Voting Token</label>
 <input class="input input--amount" disabled placeholder="asset id" type="number" id="asset"></input>
 <div class="swap-field__btns">
-<button class="btn btn--change-token" id="asaOpt">Opt-in to Token</button></div></div></div><br><br>
+<button class="btn btn--change-token" id="asaOpt">Opt-in to Token</button></div></div></div>
 <div class="">
 <div class="fees">
 <div id="options-div" class="options-div" style="display:block">
-<label >Select Option:</label>
-<button class="btn btn--generate-link" id="options-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setOpenTwo()">Voting Options</button></div>
+<label class="options-label">Voting Options:</label>
+<button class="btn btn--generate-link" id="options-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setOpenTwo()"><span class="fee-count__title">Review choices</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+</svg></div>
 <div id="modal-root-3" class="modal-root-3" style="display:none">
 <div class="modal-topbar"><h2 class="modal-title">Vote Options</h2><button id="options-close" class="modal-close"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.75732 7.75732L16.2426 16.2426"></path><path d="M7.75739 16.2426L16.2427 7.75732"></path></svg></button>
 </div>
-<button class="btn btn--generate-link"" id="candidatea">candidatea</button>
-<button class="btn btn--generate-link"" id="candidateb">candidateb</button>
+<button class="btn btn--generate-link options" id="candidatea">candidatea</button>
+<button class="btn btn--generate-link options" id="candidateb">candidateb</button>
 </div>
 </div></div><button class="btn btn--generate-link"" id="vote" disabled>Vote</button> <br>
 <div id="fee-container" class="fees"><button id="fee-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setOpen()" class="btn btn--connect-wallet" disabled><span class="fee-count__title">Check Vote</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph" viewBox="0 0 16 16">
@@ -69,6 +71,9 @@ const wallet = Pipeline.init()
 
 document.getElementById("WalletConnect").onclick = () => {
   localStorage.clear()
+  document.getElementById("WalletConnect").style.backgroundColor = "#323a58"
+  document.getElementById("AlgoSigner").style.backgroundColor = "var(--clr-bg)"
+  document.getElementById("myAlgoWallet").style.backgroundColor = "var(--clr-bg)"
 
   Pipeline.pipeConnector = "WalletConnect"
   Pipeline.connect(wallet).then(data => alert(data))
@@ -76,11 +81,18 @@ document.getElementById("WalletConnect").onclick = () => {
 
 document.getElementById("AlgoSigner").onclick = () => {
 
+  document.getElementById("WalletConnect").style.backgroundColor = "var(--clr-bg)"
+  document.getElementById("AlgoSigner").style.backgroundColor = "#323a58"
+  document.getElementById("myAlgoWallet").style.backgroundColor = "var(--clr-bg)"
   Pipeline.pipeConnector = "AlgoSigner"
   Pipeline.connect(wallet).then(data => alert(data))
 }
 
 document.getElementById("myAlgoWallet").onclick = () => {
+
+  document.getElementById("WalletConnect").style.backgroundColor = "var(--clr-bg)"
+  document.getElementById("AlgoSigner").style.backgroundColor = "var(--clr-bg)"
+  document.getElementById("myAlgoWallet").style.backgroundColor = "#323a58"
 
   Pipeline.pipeConnector = "myAlgoWallet"
   Pipeline.connect(wallet).then(data => alert(data))
@@ -178,8 +190,16 @@ function toggleBorder(){
 
 function setA (){
   candidate = "candidatea"
+  document.getElementById("candidatea").style.backgroundColor = "#323a58"
+  document.getElementById("candidateb").style.backgroundColor = "var(--clr-bg)"
+  document.getElementById("options-btn").style.backgroundColor = "#262730"
+  document.getElementById("vote").disabled = false
 }
 
 function setB (){
-  candidate = "candidatea"
+  candidate = "candidateb"
+  document.getElementById("candidateb").style.backgroundColor = "#323a58"
+  document.getElementById("candidatea").style.backgroundColor = "var(--clr-bg)"
+  document.getElementById("options-btn").style.backgroundColor = "#262730"
+  document.getElementById("vote").disabled = false
 }
