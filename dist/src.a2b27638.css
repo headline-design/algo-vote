@@ -133,7 +133,7 @@
   justify-content: center
 }
 
-button#AlgoSigner:hover,button#wallet-connect:hover,button#check-btn:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
+button#AlgoSigner:hover,button#wallet-connect:hover,button#check:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
   font-weight: 600;
   box-shadow: 0 4px 10px rgb(0 0 0/10%);
   border-color: var(--primary-color-lightest);
@@ -209,7 +209,7 @@ button#candidatea {
   margin-bottom: 1rem
 }
 
-.modal-root-3,button#check-btn {
+.modal-root-3,button#check {
   border: 1px solid #2e2f36;
   border: var(--border)
 }
@@ -221,18 +221,32 @@ button#candidatea {
   padding: 15px
 }
 
-button#check-btn {
+button#check {
   display: flex;
   transition: border-color .2s ease-in-out;
 }
 
-button#check-btn:focus {
+button#check:focus {
 color: var(--primary-color-lightest) !important;
 }
 
-button#AlgoSigner:focus,button#WalletConnect:focus,button#check-btn:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
+button#AlgoSigner:focus,button#WalletConnect:focus,button#check:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
   color: #fff;
   border-color: var(--primary-color)
+}
+
+:root .light {
+  background-color: #efefef;
+  --primary-color: #532ae6;
+  --secondary-color: #535790;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+  --clr-bg-lighter: #fff;
+  --border: #dadada;
+  --clr-white: #090909;
+  --clr-bg: #e1e1e1;
+  --clr-text: #50515a;
 }
 
 button#wallet-connect {
@@ -1726,11 +1740,11 @@ h1#voteTitle {
   list-style: none
 }
 
-button#check-btn:disabled {
+button#check:disabled {
   opacity: 50%;
 }
 
-button#check-btn {
+button#check {
   opacity: 100%;
 }
 

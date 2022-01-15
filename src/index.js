@@ -12,7 +12,7 @@ var showChart = true
 window.voteConfig = {title: "Algo Vote", asaIndex: 1234567, appId: 538450585, a: "candidate 0", b: "goodbye world"}
 
 document.getElementById("vote-root").innerHTML = `
-
+<button id="toggle-css">Toggle light mode</button>
 <br>
 <div id="votediv" class="swap-form" align="center">
 <h1 id="voteTitle">Algoo Voot</h1>
@@ -120,6 +120,7 @@ document.getElementById("vote").onclick = function () {
     })
 }
 
+document.getElementById("toggle-css").onclick = toggleMode;
 document.getElementById("wallet-connect").onclick = setOpenOne;
 document.getElementById("info").onclick = setOpenThree;
 document.getElementById("plotly-switch").onclick = setOpenSix;
@@ -176,6 +177,11 @@ function close() {
   document.getElementById("options-div").style.display = "block";
   document.getElementById("plotly-container").style.display = "none";
   
+}
+
+function toggleMode() {
+  var element = document.body;
+  element.classList.toggle("light");
 }
 
 function checkVote() {
