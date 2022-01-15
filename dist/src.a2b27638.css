@@ -14,6 +14,7 @@
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
+  --clr-text-2: #fff;
 }
 
 @-webkit-keyframes increase {
@@ -138,7 +139,8 @@ button#AlgoSigner:hover,button#wallet-connect:hover,button#check:hover, button#W
   box-shadow: 0 4px 10px rgb(0 0 0/10%);
   border-color: var(--primary-color-lightest);
   border-width: 1px;
-  background: #27303f
+  background: var(--btn-bg-1);
+  border-style: solid;
 }
 
 .flex-column {
@@ -167,19 +169,22 @@ button#AlgoSigner:hover,button#wallet-connect:hover,button#check:hover, button#W
 
 
 button#AlgoSigner:active,button#wallet-connect:hover,button#WalletConnect:active,button#myAlgoWallet:active,button#candidateb:active,button#candidatea:active {
-  background: #323a58;
+  background: var(--btn-bg-1);
 }
 
 .modal-content.modal-content-size:hover, div#modal-root-3:hover {
-  border-style: solid;
-  border-color: var(--primary-color-lightest);
+  border: 1px solid var(--primary-color-lightest);
+}
+.modal-content.modal-content-size, div#modal-root-3{
+  border: 1px solid;
+  border-color: var(--border);
 }
 
 button#options-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #262730;
+  background-color: var(--clr-bg-lighter);
   border-style: solid;
   border-width: 1px;
   border-color: var(--clr-text-darker);
@@ -191,14 +196,15 @@ button#options-btn:hover {
   font-weight: 600;
     box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
     border-color: var(--primary-color);
+    border-style: solid;
     border-width: 1px;
-    background: #27303f;
+    background: var(--btn-bg-1);
     color: var(--primary-color)
 }
 
 button#options-btn:focus, button#options-btn:active {
 background: #323a58;
-color: #fff !important;
+color: var(--clr-text-2) !important;
 transition: stroke .2s ease-in-out;
 }
 
@@ -236,17 +242,21 @@ button#AlgoSigner:focus,button#WalletConnect:focus,button#check:focus,button#myA
 }
 
 :root .light {
-  background-color: #efefef;
+  background-color: #fff;
   --primary-color: #532ae6;
   --secondary-color: #535790;
+  --clr-text-darker: #eaeaea;
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
   --clr-bg-lighter: #fff;
-  --border: #dadada;
+  --border: #70747d;
   --clr-white: #090909;
-  --clr-bg: #e1e1e1;
+  --clr-bg: #fff;
   --clr-text: #50515a;
+  --clr-text-2: #fff;
+  --clr-text-3: #fff;
+  --btn-bg-1: #fff;
 }
 
 button#wallet-connect {
@@ -256,19 +266,25 @@ button#wallet-connect {
   border-radius: 8px;
   background-color: var(--clr-bg-lighter);
   transition: border-color .2s ease-in-out;
-  color: #fbfbff
+  color: var(--clr-text);
 }
 
 button#wallet-connect:hover {
   box-shadow: 0 4px 10px rgb(0 0 0/10%);
   border-color: var(--primary-color-lightest);
   border-width: 1px;
-  background: #27303f
+  border-style: solid;
+  background: var(--btn-bg-1);
+  color: var(--clr-text-2);
+}
+
+.footer__item {
+  background-color: var(--clr-text-3);
 }
 
 button#wallet-connect:focus {
   border-color: var(--primary-color)!important;
-  color: #fff
+  color: var(--clr-text-2);
 }
 
 button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,button#candidateb,button#candidatea {
@@ -283,14 +299,16 @@ button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,button#candidateb,but
 }
 
 .modal-close:hover {
-  background: #27303f;
+  background: var(--btn-bg-1);
   border-color: var(--primary-color-lightest) !important;
 }
 
 .modal-close {
   transition: border-color .2s ease-in-out;
-  border: var(--border)!important;
-  border-radius: 8px
+  border: var(--clr-bg-lighter) !important;
+  border-radius: 8px;
+  border-style: solid !important;
+  border-width: 1px !important;
 }
 
 div[class*=pipeline-select]>div:hover {
@@ -320,7 +338,9 @@ div[class*=pipeline-select]>div:hover {
   --clr-text: #fbfbff;
   --clr-text-darker: #70747d;
   --clr-white: #fff;
-  --border: 1px solid #2e2f36
+  --border: #2e2f36;
+  --clr-text-3: #262730;
+  --btn-bg-1: #27303f;
 }
 
 body {
@@ -403,7 +423,10 @@ a {
   background: var(--clr-bg-lighter);
   border: 1px solid #2e2f36;
   border: var(--border);
-  border-radius: 8px
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  box-shadow: rgb(0 0 0 / 12%) 0px 5px 10px 0px;
 }
 
 .address-field,.swap-container {
@@ -851,6 +874,9 @@ input[type=number] {
   border: 1px solid #2e2f36;
   border: var(--border);
   border-radius: 6px;
+  border-width: 1px;
+  border-radius: 6px;
+  border-style: solid;
   transition: border-color .15s ease-in-out
 }
 
@@ -922,7 +948,7 @@ button:disabled {
   align-items: center;
   padding: 8px 12px;
   font-size: 12px;
-  color: #fff;
+  color: var(--clr-text-2);
   border-radius: 4px
 }
 
@@ -971,7 +997,7 @@ button:disabled {
 .btn--change-token {
   padding: 9px 12px;
   color: #fbfbff;
-  color: var(--clr-text);
+  color: var(--clr-text-2);
   background: var(--primary-color);
   border-radius: 6px;
   white-space: nowrap
@@ -1009,8 +1035,7 @@ button:disabled {
 
 .btn--max:focus {
   outline: 0;
-  color: #fff;
-  color: var(--clr-white);
+  color: var(--clr-text-2);
   background: #2575c4;
   background: var(--primary-color-lightest)
 }
@@ -1045,8 +1070,7 @@ button:disabled {
 }
 
 .btn--swap-complete,.btn--warning:focus,.btn--warning:hover {
-  color: #fff;
-  color: var(--clr-white)
+  color: var(--clr-text-2)
 }
 
 .btn--swap-complete {
@@ -1281,7 +1305,7 @@ h1#voteTitle {
   width: calc(100% + 32px);
   margin: 0 auto;
   margin-left: -16px;
-  border-bottom: 1px solid #63636b;
+  border-bottom: 1px solid var(--clr-text-darker);
   font-weight: 500;
   font-family: 'Libre Franklin', sans-serif;
 }
@@ -1679,9 +1703,7 @@ h1#voteTitle {
   width: 40px;
   height: 40px;
   display: flex;
-  background: 0 0;
-  border: 1px solid #2e2f36;
-  border: var(--border);
+  border: 1px solid var(--border);
   border-radius: 32px;
   transition: border-color .2s ease-in-out
 }
