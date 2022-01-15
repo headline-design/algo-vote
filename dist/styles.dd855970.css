@@ -133,7 +133,7 @@
   justify-content: center
 }
 
-button#AlgoSigner:hover,button#wallet-connect:hover,button#fee-btn:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
+button#AlgoSigner:hover,button#wallet-connect:hover,button#check-btn:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
   font-weight: 600;
   box-shadow: 0 4px 10px rgb(0 0 0/10%);
   border-color: var(--primary-color-lightest);
@@ -209,7 +209,7 @@ button#candidatea {
   margin-bottom: 1rem
 }
 
-.modal-root-3,button#fee-btn {
+.modal-root-3,button#check-btn {
   border: 1px solid #2e2f36;
   border: var(--border)
 }
@@ -221,16 +221,16 @@ button#candidatea {
   padding: 15px
 }
 
-button#fee-btn {
+button#check-btn {
   display: flex;
   transition: border-color .2s ease-in-out;
 }
 
-button#fee-btn:focus {
+button#check-btn:focus {
 color: var(--primary-color-lightest) !important;
 }
 
-button#AlgoSigner:focus,button#WalletConnect:focus,button#fee-btn:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
+button#AlgoSigner:focus,button#WalletConnect:focus,button#check-btn:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
   color: #fff;
   border-color: var(--primary-color)
 }
@@ -238,7 +238,7 @@ button#AlgoSigner:focus,button#WalletConnect:focus,button#fee-btn:focus,button#m
 button#wallet-connect {
   display: flex;
   border: 1px solid #2e2f36;
-  border: var(--border);
+  border-color: var(--clr-text-darker);
   border-radius: 8px;
   background-color: var(--clr-bg-lighter);
   transition: border-color .2s ease-in-out;
@@ -1139,6 +1139,10 @@ button:disabled {
   background-color: var(--clr-white)
 }
 
+button#check {
+  display: flex;
+}
+
 .fees {
   margin: 16px 0
 }
@@ -1200,6 +1204,10 @@ button#options-btn {
   gap: 8px
 }
 
+g.hovertext {
+  border-radius: 4px !important;
+}
+
 .fee-field {
   position: relative;
   padding: 16px 24px;
@@ -1214,6 +1222,86 @@ button#options-btn {
 
 .fee-field>div {
   flex-direction: column
+}
+
+.tallies-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  text-indent: 1rem;
+  padding-bottom: 1rem;
+}
+
+.tallies-field {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.tallies-label {
+  position: absolute;
+  top: 16px;
+  left: 0px;
+  z-index: 10;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
+  color: #fbfbff;
+  color: var(--clr-text);
+  width: 100%;
+}
+
+h1#voteTitle {
+  padding-bottom: 1rem;
+  border-bottom-style: solid;
+  border-width: 1px;
+  width: calc(100% + 32px);
+  margin: 0 auto;
+  margin-left: -16px;
+  border-bottom: 1px solid #63636b;
+  font-weight: 500;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.swap-switch svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  stroke: unset;
+  stroke: unset;
+  stroke-width: unset;
+  stroke-linecap: unset;
+  stroke-linejoin: unset;
+}
+
+.tallies-amount {
+  font-weight: 600 !important;
+  font-size: 22px !important;
+  color: var(--primary-color) !important;
+  padding-top: 14px;
+  height: 76px !important;
+  line-height: 66px !important;
+  background: var(--clr-bg);
+  border: 1px solid #2e2f36;
+  border: var(--border);
+  border-radius: 6px;
+  transition: border-color .15s ease-in-out;
+  margin: unset !important;
+}
+
+.tallies-card-a, .tallies-card-b {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .swap-field__currency-icon {
@@ -1638,11 +1726,11 @@ button#options-btn {
   list-style: none
 }
 
-button#fee-btn:disabled {
+button#check-btn:disabled {
   opacity: 50%;
 }
 
-button#fee-btn {
+button#check-btn {
   opacity: 100%;
 }
 
