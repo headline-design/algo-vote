@@ -12,12 +12,16 @@
   --primary-color-2: #4842e9;
   --primary-color-lightest: #7773ef;
   --primary-color-lightest-2: #7773ef;
+  --primary-color-lightest-3: #7773ef;
   --secondary-color: #536390;
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
   --clr-text-2: #fff;
+  --clr-text-7: #fff;
+  --clr-text-5: #fff;
   --bg-color-active: #27303f;
+  --bg-color-active-2: #27303f;
   --box-shadow-1: 0 4px 10px rgb(0 0 0 / 10%);
   
 }
@@ -142,9 +146,10 @@
 button#AlgoSigner:hover,button#wallet-connect:hover,button#check:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
   font-weight: 600;
   box-shadow: 0 4px 10px rgb(0 0 0/10%);
-  border-color: var(--primary-color-lightest);
+  border-color: var(--primary-color-lightest-3);
   border-width: 1px;
-  background: var(--btn-bg-1);
+  color: var(--clr-text-5);
+  background: var(--btn-bg-2);
   border-style: solid;
 }
 
@@ -174,7 +179,7 @@ button#AlgoSigner:hover,button#wallet-connect:hover,button#check:hover, button#W
 
 
 button#AlgoSigner:active,button#wallet-connect:hover,button#WalletConnect:active,button#myAlgoWallet:active,button#candidateb:active,button#candidatea:active {
-  background: var(--btn-bg-1);
+  background: var(--bg-color-active-2);
 }
 
 .modal-content.modal-content-size:hover, div#modal-root-3:hover {
@@ -203,7 +208,7 @@ button#options-btn:hover {
     border-color: var(--primary-color);
     border-style: solid;
     border-width: 1px;
-    background: var(--btn-bg-1);
+    background: var(--btn-bg-2);
     color: var(--primary-color)
 }
 
@@ -242,8 +247,9 @@ color: var(--primary-color-lightest) !important;
 }
 
 button#AlgoSigner:focus,button#WalletConnect:focus,button#check:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
-  color: #fff;
-  border-color: var(--primary-color)
+  color: var(--clr-text-5);
+  border-color: var(--primary-color);
+  background: var(--bg-color-active-2);
 }
 
 :root .light {
@@ -262,10 +268,16 @@ button#AlgoSigner:focus,button#WalletConnect:focus,button#check:focus,button#myA
   --clr-text: #50515a;
   --clr-text-2: #fff;
   --clr-text-3: #000;
+  --clr-text-7: #532ae6;
   --clr-text-4: #000;
+  --border-2: #532ae6;
+  --clr-text-5: #fff;
   --btn-bg-1: #fff;
+  --btn-bg-2: #532ae6;
   --primary-color-lightest-2: #000;
+  --primary-color-lightest-3: #fff;
   --bg-color-active: #eaeaea;
+  --bg-color-active-2: #7773ef;
   --box-shadow-1: rgb(0 0 0 / 0%) 0px 0px 0px;
 }
 
@@ -301,9 +313,9 @@ button#wallet-connect:focus {
 
 button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,button#candidateb,button#candidatea {
   border: 1px solid #2e2f36;
-  border: var(--border);
+  border: var(--border-2);
   background-color: var(--clr-bg);
-  color: var(--clr-text-4);
+  color: var(--clr-text-7);
   font-weight: 600;
   transition: border-color .2s ease-in-out;
   border-radius: 8px;
@@ -353,9 +365,11 @@ div[class*=pipeline-select]>div:hover {
   --clr-text-darker: #70747d;
   --clr-white: #fff;
   --border: #2e2f36;
+  --border-2: #2e2f36;
   --clr-text-3: #262730;
   --clr-text-4: #fff;
   --btn-bg-1: #27303f;
+  --btn-bg-2: #27303f;
 }
 
 body {
