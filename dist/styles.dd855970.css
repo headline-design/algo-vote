@@ -1400,13 +1400,12 @@ h1.bolierplate-h1 {
 }
 
 .badge {
-  font-size: 14px;
   display: inline-block;
   border-radius: 16px;
-  background-color: #aaffec;
   font-variant: tabular-nums;
   line-height: 1;
-  color: #000!important;
+  background-color: #7773ef;
+  color: rgb(255 255 255);
   vertical-align: middle;
   border: 0;
   font-size: calc(14px);
@@ -1414,7 +1413,11 @@ h1.bolierplate-h1 {
   height: auto;
   padding: calc(4px) calc(7px);
   margin: 0;
-  letter-spacing: 0
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+  border-bottom-style: solid;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 h1#voteTitle {
@@ -1993,12 +1996,19 @@ label.options-label {
   justify-content: center;
   align-content: center;
   flex-direction: row;
-  line-height: 3rem
+  line-height: 3rem;
+  text-transform: uppercase;
+  font-size: smaller;
+  font-weight: 500;
 }
 
 .lds-ring div:first-child {
   -webkit-animation-delay: -.45s;
   animation-delay: -.45s
+}
+
+.modal-body li, .modal-body p {
+  text-align: justify;
 }
 
 .lds-ring div:nth-child(2) {
