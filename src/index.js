@@ -2,14 +2,13 @@ import "./styles.css";
 
 import Pipeline from "@pipeline-ui-2/pipeline";
 
-import Plotly from 'plotly.js-dist'
+//import Plotly from 'plotly.js-dist'
 
 var candidate = ""
 
 var showChart = true
 
-//uncomment to test window.voteConfig
-window.voteConfig = {title: "Got Snacks?", asaIndex: 547989587, appId: 547990100, a: "want snacks", b: "Do not want snacks"}
+//window.voteConfig = {title: "Got Snacks?", asaIndex: 547989587, appId: 547990100, a: "want snacks", b: "Do not want snacks"}
 
 document.getElementById("vote-root").innerHTML = `
 <br>
@@ -208,7 +207,7 @@ function toggleMode() {
 }
 
 function checkVote() {
-  document.getElementById("check").onclick = setOpen;
+  setOpen();
   let index = document.getElementById("appId").value
   Pipeline.readGlobalState(index).then(
     data => {
@@ -228,7 +227,7 @@ function checkVote() {
       window.tallies = {a: atally, b: btally}
       chartData[0].values = [atally,btally],
       chartData[0].labels = [window.voteConfig.a,window.voteConfig.b]
-      Plotly.redraw('voteChart', chartData, layout);
+      //Plotly.redraw('voteChart', chartData, layout);
       document.getElementById("textTallies-1").innerText = window.voteConfig.a
       document.getElementById("textTallies-2").innerText = atally
       document.getElementById("textTallies-3").innerText = window.voteConfig.b
@@ -256,6 +255,7 @@ function setA (){
   document.getElementById("candidateb").style.backgroundColor = "var(--clr-bg)"
   document.getElementById("options-btn").style.backgroundColor = "var(--clr-text-3)"
   document.getElementById("vote").disabled = false
+  close()
 }
 
 function setB (){
@@ -266,6 +266,7 @@ function setB (){
   document.getElementById("candidatea").style.color = "var(--clr-text-7)"
   document.getElementById("options-btn").style.backgroundColor = "var(--clr-text-3)"
   document.getElementById("vote").disabled = false
+  close()
 }
 
 var chartData = [{
@@ -293,4 +294,4 @@ function log (data){
 
 }
 
-Plotly.newPlot('voteChart', chartData, layout);
+//Plotly.newPlot('voteChart', chartData, layout);

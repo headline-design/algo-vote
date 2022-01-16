@@ -1882,12 +1882,9 @@ h1#voteTitle-2 {
 }
 
 button#check:disabled {
-  opacity: 50%
+  opacity: .5;
 }
 
-button#check {
-  opacity: 100%
-}
 
 button#info {
   margin-right: .5rem
