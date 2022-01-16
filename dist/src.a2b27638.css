@@ -1,31 +1,3 @@
-[data-theme="dark"] {
-  --primary-color: #9A97F3;
-  --secondary-color: #818cab;
-  --primary-color-lightest:#cdccf9;
-  --font-color: #e1e1ff;
-  --bg-color: #161625;
-  --heading-color: #818cab;
-}
-
-:root {
-  --primary-color: #4842e9;
-  --primary-color-2: #4842e9;
-  --primary-color-lightest: #7773ef;
-  --primary-color-lightest-2: #7773ef;
-  --primary-color-lightest-3: #7773ef;
-  --secondary-color: #536390;
-  --font-color: #424242;
-  --bg-color: #fff;
-  --heading-color: #292922;
-  --clr-text-2: #fff;
-  --clr-text-7: #fff;
-  --clr-text-5: #fff;
-  --bg-color-active: #27303f;
-  --bg-color-active-2: #27303f;
-  --box-shadow-1: 0 4px 10px rgb(0 0 0 / 10%);
-  
-}
-
 @-webkit-keyframes increase {
   0% {
       left: -5%;
@@ -138,91 +110,144 @@
   }
 }
 
+[data-theme=dark] {
+  --primary-color: #9A97F3;
+  --secondary-color: #818cab;
+  --primary-color-lightest: #cdccf9;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --heading-color: #818cab
+}
+
+:root {
+  --primary-color: #4842e9;
+  --primary-color-2: #4842e9;
+  --primary-color-lightest: #7773ef;
+  --primary-color-lightest-2: #7773ef;
+  --primary-color-lightest-3: #7773ef;
+  --primary-color-3: #4842e9;
+  --secondary-color: #536390;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+  --clr-text-1: #fff;
+  --clr-text-2: #fff;
+  --clr-text-8: #fff;
+  --clr-text-7: #fff;
+  --clr-text-5: #fff;
+  --bg-color-active: #27303f;
+  --bg-color-focus: #323a58;
+  --bg-color-active-2: #27303f;
+  --bg-color-after: #323a58;
+  --box-shadow-1: 0 4px 10px rgb(0 0 0 / 10%);
+  --p-body: #d6d6dc;
+  --h1: #fff
+}
+
 .fees.flex {
   display: flex;
   justify-content: center
 }
 
-button#AlgoSigner:hover,button#wallet-connect:hover,button#check:hover, button#WalletConnect:hover,button#myAlgoWallet:hover,button#candidateb:hover,button#candidatea:hover {
+button#AlgoSigner:hover {
+  border-color: var(--primary-color-lightest-3);
+  border-width: 1px;
+  color: var(--clr-text-5)!important;
+  border-style: solid
+}
+
+button#AlgoSigner:hover,button#check:hover,button#wallet-connect:hover {
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgb(0 0 0/10%);
+  background: var(--btn-bg-2)!important
+}
+
+button#check:hover {
+  border-color: var(--primary-color-lightest-3);
+  border-width: 1px;
+  border-style: solid
+}
+
+button#WalletConnect:hover,button#myAlgoWallet:hover {
+  color: var(--clr-text-5)!important
+}
+
+button#WalletConnect:hover,button#candidatea:hover,button#candidateb:hover,button#myAlgoWallet:hover {
   font-weight: 600;
   box-shadow: 0 4px 10px rgb(0 0 0/10%);
   border-color: var(--primary-color-lightest-3);
   border-width: 1px;
-  color: var(--clr-text-5);
-  background: var(--btn-bg-2);
-  border-style: solid;
+  background: var(--btn-bg-2)!important;
+  border-style: solid
 }
 
 .flex-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .fees-1 {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem
 }
 
-.footer__menu {
-  display: flex;
+.fees-1,.flex,.footer__menu {
+  display: flex
 }
 
 .flex {
-  display: flex;
   justify-content: space-between;
   align-content: center;
   align-items: stretch;
-  flex-direction: row;
+  flex-direction: row
 }
 
-
-button#AlgoSigner:active,button#wallet-connect:hover,button#WalletConnect:active,button#myAlgoWallet:active,button#candidateb:active,button#candidatea:active {
-  background: var(--bg-color-active-2);
+button#AlgoSigner:active,button#WalletConnect:active,button#candidatea:active,button#candidateb:active,button#myAlgoWallet:active,button#wallet-connect:hover {
+  background: var(--bg-color-active-2)
 }
 
-.modal-content.modal-content-size:hover, div#modal-root-3:hover {
-  border: 1px solid var(--primary-color-lightest);
+.modal-content.modal-content-size:hover,div#modal-root-3:hover {
+  border: 1px solid var(--primary-color-lightest)
 }
-.modal-content.modal-content-size, div#modal-root-3{
+
+.modal-content.modal-content-size,div#modal-root-3 {
   border: 1px solid;
-  border-color: var(--border);
+  border-color: var(--border)
 }
 
 button#options-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--clr-bg-lighter);
+  background-color: var(--clr-bg-lighter-2);
   border-style: solid;
   border-width: 1px;
   border-color: var(--clr-text-darker);
-  color: var(--border-color);
+  color: var(--clr-text-1);
   transition: border-color .2s ease-in-out;
+  fill: var(--clr-text-1)
+}
+
+button#candidatea:hover,button#candidateb:hover {
+  color: var(--clr-text-5)!important
 }
 
 button#options-btn:hover {
   font-weight: 600;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
-    border-color: var(--primary-color);
-    border-style: solid;
-    border-width: 1px;
-    background: var(--btn-bg-2);
-    color: var(--primary-color)
+  box-shadow: var(--box-shadow-1);
+  border-color: var(--primary-color-lightest-2);
+  border-style: solid;
+  border-width: 1px;
+  background: var(--btn-bg-3)!important;
+  color: var(--primary-color-lightest-2);
+  fill: var(--primary-color-lightest-2);
+  transform: translate3d(0,-1px,0)
 }
 
-button#options-btn:focus, button#options-btn:active {
-background: #323a58;
-color: var(--clr-text-2) !important;
-transition: stroke .2s ease-in-out;
-}
-
-
-
-
-button#candidatea {
-  margin-bottom: 1rem
+button#options-btn:active,button#options-btn:focus {
+  background: var(--bg-color-focus)!important;
+  color: var(--clr-text-4)!important;
+  transition: stroke .2s ease-in-out;
+  fill: var(--clr-text-4)!important;
+  border-color: var(--primary-color-3)
 }
 
 .modal-root-3,button#check {
@@ -231,25 +256,28 @@ button#candidatea {
 }
 
 .modal-root-3 {
-  background: var(--clr-bg-lighter);
+  background: var(--clr-bg-lighter-2);
   border-radius: 8px;
   z-index: 2000;
   padding: 15px
 }
 
 button#check {
-  display: flex;
-  transition: border-color .2s ease-in-out;
+  transition: border-color .2s ease-in-out
 }
 
 button#check:focus {
-color: var(--primary-color-lightest) !important;
+  color: var(--primary-color-lightest)!important;
+  border-color: var(--primary-color)!important;
+  transition: stroke .2s ease-in-out;
+  border-width: 1px;
+  border-style: solid
 }
 
-button#AlgoSigner:focus,button#WalletConnect:focus,button#check:focus,button#myAlgoWallet:focus,button#candidateb:focus,button#candidatea:focus {
-  color: var(--clr-text-5);
+button#AlgoSigner:focus,button#WalletConnect:focus,button#candidatea:focus,button#candidateb:focus,button#myAlgoWallet:focus {
+  color: var(--clr-text-5)!important;
   border-color: var(--primary-color);
-  background: var(--bg-color-active-2);
+  background: var(--bg-color-active-2)!important
 }
 
 :root .light {
@@ -257,28 +285,48 @@ button#AlgoSigner:focus,button#WalletConnect:focus,button#check:focus,button#myA
   --primary-color: #532ae6;
   --primary-color-2: #000;
   --secondary-color: #535790;
-  --clr-text-darker: #090909;
+  --clr-text-darker: #eaeaea;
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
-  --clr-bg-lighter: #fff;
-  --border: #70747d;
-  --clr-white: #090909;
+  --clr-bg-lighter: #fafafa;
+  --clr-bg-lighter-2: #fff;
+  --clr-white: #000;
   --clr-bg: #fff;
+  --clr-bg-2: #000;
   --clr-text: #50515a;
   --clr-text-2: #fff;
-  --clr-text-3: #000;
-  --clr-text-7: #532ae6;
+  --clr-text-8: #000;
+  --clr-text-1: #666;
+  --clr-text-3: #fff;
+  --clr-text-7: #7773ef;
   --clr-text-4: #000;
-  --border-2: #532ae6;
+  --border-2: #7773ef;
+  --border: #eaeaea;
+  --border-3: 1px solid #eaeaea;
+  --bg-color-after: #532ae6;
   --clr-text-5: #fff;
   --btn-bg-1: #fff;
-  --btn-bg-2: #532ae6;
+  --btn-bg-2: #7773ef;
+  --btn-bg-3: #fff;
   --primary-color-lightest-2: #000;
+  --primary-color-3: #000;
   --primary-color-lightest-3: #fff;
   --bg-color-active: #eaeaea;
-  --bg-color-active-2: #7773ef;
+  --bg-color-focus: #eaeaea;
+  --bg-color-active-2: #532ae6;
   --box-shadow-1: rgb(0 0 0 / 0%) 0px 0px 0px;
+  --p-body: #000;
+  --h1: #333
+}
+
+.modal-body li,.modal-body p {
+  color: var(--p-body)!important;
+  margin-block: 8px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #d6d6dc
 }
 
 button#wallet-connect {
@@ -288,7 +336,7 @@ button#wallet-connect {
   border-radius: 8px;
   background-color: var(--clr-text-3);
   transition: border-color .2s ease-in-out;
-  color: var(--clr-text-2);
+  color: var(--clr-text-1)
 }
 
 button#wallet-connect:hover {
@@ -296,22 +344,23 @@ button#wallet-connect:hover {
   border-color: var(--primary-color-lightest-2);
   border-width: 1px;
   border-style: solid;
-  background: var(--btn-bg-1);
-  color: var(--clr-text-4);
-  transform: translate3d(0px, -1px, 0px);
+  background: var(--btn-bg-1)!important;
+  color: var(--clr-text-4)!important;
+  transform: translate3d(0,-1px,0)
 }
 
 .footer__item {
-  background-color: unset;
+  background-color: var(--clr-text-3);
+  fill: var(--clr-text-1)
 }
 
 button#wallet-connect:focus {
   border-color: var(--primary-color-2)!important;
   color: var(--clr-text-4);
-  background-color: var(--bg-color-active);
+  background-color: var(--bg-color-active)!important
 }
 
-button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,button#candidateb,button#candidatea {
+button#AlgoSigner,button#WalletConnect,button#candidatea,button#candidateb,button#myAlgoWallet {
   border: 1px solid #2e2f36;
   border: var(--border-2);
   background-color: var(--clr-bg);
@@ -321,20 +370,20 @@ button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,button#candidateb,but
   border-radius: 8px;
   margin-bottom: .5rem;
   border-width: 1px;
-  border-style: solid;
+  border-style: solid
 }
 
 .modal-close:hover {
   background: var(--btn-bg-1);
-  border-color: var(--primary-color-lightest) !important;
+  border-color: var(--primary-color-lightest)!important
 }
 
 .modal-close {
   transition: border-color .2s ease-in-out;
-  border: var(--clr-bg-lighter) !important;
+  border: var(--clr-bg-lighter)!important;
   border-radius: 8px;
-  border-style: solid !important;
-  border-width: 1px !important;
+  border-style: solid!important;
+  border-width: 1px!important
 }
 
 div[class*=pipeline-select]>div:hover {
@@ -360,22 +409,41 @@ div[class*=pipeline-select]>div:hover {
 
 :root {
   --clr-bg: #1a1c22;
+  --clr-bg-2: #1a1c22;
   --clr-bg-lighter: #262730;
+  --clr-bg-lighter-2: #262730;
   --clr-text: #fbfbff;
   --clr-text-darker: #70747d;
   --clr-white: #fff;
   --border: #2e2f36;
   --border-2: #2e2f36;
+  --border-3: 4px solid #262730;
   --clr-text-3: #262730;
   --clr-text-4: #fff;
   --btn-bg-1: #27303f;
   --btn-bg-2: #27303f;
+  --btn-bg-3: #27303f
+}
+
+button#check:disabled {
+  color: var(--primary-color-lightest)!important
+}
+
+button#check {
+  color: var(--primary-color-lightest)!important;
+  fill: var(--primary-color-lightest);
+  display: flex
+}
+
+button#check:hover {
+  color: var(--primary-color-lightest-3)!important;
+  fill: var(--primary-color-lightest-3)!important
 }
 
 body {
   position: relative;
   min-height: 100vh;
-  font-family: "Inter",sans-serif,system-ui;
+  font-family: "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -455,7 +523,7 @@ a {
   border-style: solid;
   border-radius: 8px;
   border-width: 1px;
-  box-shadow: rgb(0 0 0 / 12%) 0px 5px 10px 0px;
+  box-shadow: rgb(0 0 0/12%)0 5px 10px 0
 }
 
 .address-field,.swap-container {
@@ -885,6 +953,11 @@ input[type=number] {
   font-weight: 400
 }
 
+.input--amount,p#textTallies-2,p#textTallies-4 {
+  padding-left: 0;
+  color: var(--primary-color)!important
+}
+
 .input--amount {
   position: relative;
   inset: 0;
@@ -893,16 +966,15 @@ input[type=number] {
   padding-top: 18px;
   padding-right: 50%;
   padding-left: 24px;
+  margin: 0!important;
+  line-height: 60px!important;
   display: block;
-  font-weight: 600;
-  font-size: 22px;
-  color: #2e93f7;
-  color: var(--primary-color);
+  font-weight: 600!important;
+  font-size: 22px!important;
   background: #1a1c22;
   background: var(--clr-bg);
   border: 1px solid #2e2f36;
   border: var(--border);
-  border-radius: 6px;
   border-width: 1px;
   border-radius: 6px;
   border-style: solid;
@@ -941,8 +1013,7 @@ button:enabled {
 
 button:disabled {
   cursor: not-allowed;
-  pointer-events:
-   all!important
+  pointer-events: all!important
 }
 
 .balance button {
@@ -1005,11 +1076,9 @@ button:disabled {
   width: 100%;
   height: 48px;
   font-weight: 600;
-  color: #fff;
-  color: var(--clr-white);
-  background: #2e93f7;
+  color: var(--clr-text-2);
   background: var(--primary-color);
-  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  box-shadow: var(--box-shadow-1);
   border-radius: 8px
 }
 
@@ -1037,7 +1106,6 @@ button:disabled {
 }
 
 .btn--change-token:focus,.btn--finalise-exchange {
-
   background: var(--primary-color-lightest)
 }
 
@@ -1154,27 +1222,20 @@ button:disabled {
   padding: 9px;
   background: #1a1c22;
   background: var(--clr-bg);
-  border: 4px solid #262730;
-  border: 4px solid var(--clr-bg-lighter);
+  border: var(--border-3);
   border-radius: 24px;
-  z-index: 1
+  z-index: 1;
+  fill: var(--clr-text-1)
 }
 
 .swap-switch:focus {
   outline: 0;
-  background: #2e93f7;
-  background: var(--primary-color)
+  background: var(--primary-color);
+  fill: #fff
 }
 
 .swap-switch svg {
-  display: block;
-  width: 14px;
-  height: 14px;
-  stroke: #fff;
-  stroke: var(--clr-white);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round
+  stroke: var(--clr-white)
 }
 
 .own-address {
@@ -1206,10 +1267,6 @@ button:disabled {
   background-color: var(--clr-white)
 }
 
-button#check {
-  display: flex;
-}
-
 .fees {
   margin: 16px 0
 }
@@ -1227,20 +1284,16 @@ button#check {
   border: 0
 }
 
-button#options-btn {
+.fee-count__title,button#options-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center
 }
 
-
 .fee-count__title {
-  display: flex;
-  align-items: center;
   grid-gap: 5px;
   gap: 5px;
-  margin-right: 10px;
-  justify-content: center;
+  margin-right: 10px
 }
 
 .fee-count__title svg {
@@ -1272,7 +1325,7 @@ button#options-btn {
 }
 
 g.hovertext {
-  border-radius: 4px !important;
+  border-radius: 4px!important
 }
 
 .fee-field {
@@ -1287,35 +1340,32 @@ g.hovertext {
   border-radius: 6px
 }
 
-.fee-field>div {
+.fee-field>div,.tallies-card {
   flex-direction: column
 }
 
 .tallies-card {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   flex-wrap: nowrap;
   border-style: solid;
   border-width: 1px;
   border-radius: 6px;
-  padding: 0.5rem;
-  padding-top: 1rem;
   text-indent: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem .5rem
 }
 
 .tallies-field {
   position: relative;
   width: 100%;
   text-align: left;
-  text-indent: 20px;
+  text-indent: 20px
 }
 
 .tallies-label {
   position: absolute;
   top: 16px;
-  left: 0px;
+  left: 0;
   z-index: 10;
   font-family: inherit;
   font-weight: 600;
@@ -1324,7 +1374,47 @@ g.hovertext {
   text-transform: capitalize;
   color: #fbfbff;
   color: var(--clr-text);
-  width: 100%;
+  width: 100%
+}
+
+.modal-title {
+  color: var(--h1)!important
+}
+
+h1.bolierplate-h1-2 {
+  padding-left: 14px;
+  letter-spacing: 2px;
+  color: var(--h1)
+}
+
+h1.bolierplate-h1 {
+  padding-right: 14px;
+  letter-spacing: 2px;
+  color: var(--h1)
+}
+
+.flexible-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.badge {
+  font-size: 14px;
+  display: inline-block;
+  border-radius: 16px;
+  background-color: #aaffec;
+  font-variant: tabular-nums;
+  line-height: 1;
+  color: #000!important;
+  vertical-align: middle;
+  border: 0;
+  font-size: calc(14px);
+  width: auto;
+  height: auto;
+  padding: calc(4px) calc(7px);
+  margin: 0;
+  letter-spacing: 0
 }
 
 h1#voteTitle {
@@ -1332,11 +1422,11 @@ h1#voteTitle {
   border-bottom-style: solid;
   border-width: 1px;
   width: calc(100% + 32px);
-  margin: 0 auto;
-  margin-left: -16px;
+  margin: 0 auto 0-16px;
+  letter-spacing: 2px;
   border-bottom: 1px solid var(--clr-text-darker);
   font-weight: 500;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif
 }
 
 .swap-switch svg {
@@ -1344,31 +1434,30 @@ h1#voteTitle {
   width: 20px;
   height: 20px;
   stroke: unset;
-  stroke: unset;
   stroke-width: unset;
   stroke-linecap: unset;
-  stroke-linejoin: unset;
+  stroke-linejoin: unset
 }
 
 .tallies-amount {
-  font-weight: 600 !important;
-  font-size: 22px !important;
-  color: var(--primary-color) !important;
+  font-weight: 600!important;
+  font-size: 22px!important;
+  color: var(--primary-color)!important;
   padding-top: 14px;
-  height: 76px !important;
-  line-height: 66px !important;
+  height: 76px!important;
+  line-height: 66px!important;
   background: var(--clr-bg);
   border: 1px solid #2e2f36;
   border: var(--border);
   border-radius: 6px;
   transition: border-color .15s ease-in-out;
-  margin: unset !important;
+  margin: unset!important
 }
 
-.tallies-card-a, .tallies-card-b {
+.tallies-card-a,.tallies-card-b {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start
 }
 
 .swap-field__currency-icon {
@@ -1488,8 +1577,7 @@ h1#voteTitle {
   font-weight: 700;
   font-size: 18px;
   text-transform: capitalize;
-  color: #fff;
-  color: var(--clr-white)
+  color: #fff
 }
 
 .modal-body {
@@ -1515,14 +1603,6 @@ h1#voteTitle {
 
 .modal-body::-webkit-scrollbar-thumb:hover,.token-list::-webkit-scrollbar-thumb:hover {
   background: #a7a7a7
-}
-
-.modal-body li,.modal-body p {
-  margin-block: 8px 0;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  color: #d6d6dc
 }
 
 .modal-body p:first-child {
@@ -1610,7 +1690,7 @@ h1#voteTitle {
 }
 
 .open-wallet-modal-header span,.open-wallet-modal-msg {
-  font-family: ui-rounded,"SF Pro Rounded","SF Pro Text",medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,ui-sans-serif,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-family: "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600
 }
 
@@ -1739,7 +1819,8 @@ h1#voteTitle {
 
 .footer__item:hover {
   border-color: #fff;
-  border-color: var(--clr-white)
+  border-color: var(--clr-white);
+  fill: var(--clr-text-4)
 }
 
 .footer__item svg {
@@ -1792,15 +1873,15 @@ h1#voteTitle {
 }
 
 button#check:disabled {
-  opacity: 50%;
+  opacity: 50%
 }
 
 button#check {
-  opacity: 100%;
+  opacity: 100%
 }
 
 button#info {
-  margin-right: 0.5rem;
+  margin-right: .5rem
 }
 
 .msg {
@@ -1850,10 +1931,13 @@ button#info {
   stroke-linejoin: round
 }
 
+.copyable,label.options-label {
+  display: flex;
+  align-items: center
+}
+
 .copyable {
   width: 100%;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   cursor: pointer
 }
@@ -1893,16 +1977,6 @@ button#info {
   height: 16px
 }
 
-label.options-label {
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: row;
-  line-height: 3rem;
-}
-
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -1912,6 +1986,14 @@ label.options-label {
   animation: lds-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;
   border: 2px solid transparent;
   border-top-color: #2e93f7
+}
+
+label.options-label {
+  text-align: left;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  line-height: 3rem
 }
 
 .lds-ring div:first-child {
