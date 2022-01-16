@@ -2,7 +2,7 @@
   "name": "algo-vote",
   "homepage": "./",
   "version": "1.0.0",
-  "description": "Algorand Voting Widget",
+  "description": "Algorand Voting Dapp",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",

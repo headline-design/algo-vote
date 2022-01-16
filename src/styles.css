@@ -110,15 +110,6 @@
   }
 }
 
-[data-theme=dark] {
-  --primary-color: #9A97F3;
-  --secondary-color: #818cab;
-  --primary-color-lightest: #cdccf9;
-  --font-color: #e1e1ff;
-  --bg-color: #161625;
-  --heading-color: #818cab
-}
-
 :root {
   --primary-color: #4842e9;
   --primary-color-2: #4842e9;
@@ -141,7 +132,8 @@
   --bg-color-after: #323a58;
   --box-shadow-1: 0 4px 10px rgb(0 0 0 / 10%);
   --p-body: #d6d6dc;
-  --h1: #fff
+  --h1: #fff;
+  --badge-bg: #27303f;
 }
 
 .fees.flex {
@@ -317,7 +309,8 @@ button#AlgoSigner:focus,button#WalletConnect:focus,button#candidatea:focus,butto
   --bg-color-active-2: #532ae6;
   --box-shadow-1: rgb(0 0 0 / 0%) 0px 0px 0px;
   --p-body: #000;
-  --h1: #333
+  --h1: #333;
+  --badge-bg: #b0b0f5;
 }
 
 .modal-body li,.modal-body p {
@@ -1404,20 +1397,33 @@ h1.bolierplate-h1 {
   border-radius: 16px;
   font-variant: tabular-nums;
   line-height: 1;
-  background-color: #7773ef;
-  color: rgb(255 255 255);
+  background-color: var(--badge-bg);
+   color: #fff;
   vertical-align: middle;
   border: 0;
+  width: 95% !important;
+    display: inline-block;
+    overflow: hidden;
+
   font-size: calc(14px);
   width: auto;
   height: auto;
   padding: calc(4px) calc(7px);
   margin: 0;
+  text-overflow: ellipsis;
+      overflow-wrap: normal;
+  word-break: initial;
+  line-height: 1.2rem !important;
+  font-size: 12px !important;
   letter-spacing: 0;
   margin-bottom: 1rem;
   border-bottom-style: solid;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+button#check[disabled]:hover{
+  background-color: black;
 }
 
 h1#voteTitle-2 {
