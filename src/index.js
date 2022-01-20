@@ -22,9 +22,9 @@ document.getElementById("vote-root").innerHTML = `
 <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
 <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
 </svg></button></div></div><div id="modal-root-4" style="display:none"><div class="modal"><div class="modal-content modal-content-size"><div class="modal-topbar"><h2 class="modal-title">How it works</h2><button class="modal-close"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.75732 7.75732L16.2426 16.2426"></path><path d="M7.75739 16.2426L16.2427 7.75732"></path></svg></button></div><div class="modal-body">
-</div></div></div></div><button id="wallet-connect" class="btn btn--connect-wallet" data-bs-toggle="modal-1" data-bs-target="#exampleModal" onclick="setOpenOne()"><span class="count__title">Connect Wallet</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet" viewBox="0 0 16 16">
+</div></div></div></div><button id="wallet-connect" class="btn btn--connect-wallet" data-bs-toggle="modal-1" data-bs-target="#exampleModal" onclick="setOpenOne()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet" viewBox="0 0 16 16">
 <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"></path>
-</svg></button>
+</svg><span id="connected" class="count__title" style="display:none">Connected</span><span id="connect-wallet" class="count__title">Connect Wallet</span></button>
 <div id="modal-root-1" style="display:none"><div class="modal-1"><div class="modal-content modal-content-size"><div class="modal-topbar"><h2 class="modal-title">Algo Wallets</h2><button id="wallet-connect-close" class="modal-close"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.75732 7.75732L16.2426 16.2426"></path><path d="M7.75739 16.2426L16.2427 7.75732"></path></svg></button>
 </div> <div class="flex-column">
 <button id="WalletConnect" class="btn btn--connect-wallet">WalletConnect</button>
@@ -36,20 +36,20 @@ document.getElementById("vote-root").innerHTML = `
 <div class="vote-container">
 <div class="vote-field">
 <label class="vote-field__label label">App</label>
-<input class="input input--amount" disabled id="appId" placeholder="App index" type="number"></input>
+<input class="input input--amount" id="appId" placeholder="App index" type="number"></input>
 <div class="vote-field__btns">
 <button class="btn btn--change-poll" id="optin">Register</button></div>
 </div>
-<div class="vote-switch"><svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="2 2 20 20" width="22px" fill="current-color"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg></div>
+<div class="vote-switch"><div id="slider" class="waiting-slider waiting-slider--full waiting-slider--helper-blue" style="display:none"><div class="waiting-slider__track"></div></div><svg id="checked-vote" xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="2 2 20 20" width="22px" fill="current-color" style="display:none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><svg id="check-vote" xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="2 2 20 20" width="22px" fill="current-color"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg></div>
 <div class="vote-field">
 <label class="vote-field__label label">Voting Token</label>
-<input class="input input--amount" disabled placeholder="asset id" type="number" id="asset"></input>
+<input class="input input--amount" placeholder="asset id" type="number" id="asset"></input>
 <div class="vote-field__btns">
 <button class="btn btn--change-poll" id="asaOpt">Opt-in to Token</button></div></div></div>
 <div class="">
 <div class="ballot">
 <div id="options-div" class="options-div" style="display:block">
-<span id="log" class="jsx-4236559370 badge">Voting Options</span>
+<span id="log" class="jsx-4236559370 badge">Voting Options</span><span id="log-2" style="display:none" class="jsx-4236559370 badge">Voting Options</span>
 <button class="btn btn--generate-link" id="options-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setOpenTwo()"><span class="count__title">Review choices</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="current-color" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
 </svg></div>
@@ -60,6 +60,7 @@ document.getElementById("vote-root").innerHTML = `
 <button class="btn btn--generate-link options" id="candidateb">candidateb</button>
 </div>
 </div></div><button class="btn btn--generate-link"" id="vote" disabled>Vote</button> <br>
+<span id="badge-verification-2" class="badge jsx-4236559370"><div id="slider-32" style="display:none"><div class="waiting-slider--full waiting-slider--helper-blue waiting-slider-3"><div class="waiting-slider__track"></div></div></div><div id="verify-label-22">Contract Verification</div></span><span id="badge-verified-2" class="badge badge-2" style="display:none"><div id="verified-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path> <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path> </svg><div class="app-verify">Vote confirmed</div></div></span>
 <div class="ballot"><button id="check" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn--connect-wallet" disabled><span class="count__title">Check Vote</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="current-color" class="bi bi-file-bar-graph" viewBox="0 0 16 16">
 <path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1z"/>
 <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
@@ -87,9 +88,17 @@ document.getElementById("WalletConnect").onclick = () => {
   document.getElementById("AlgoSigner").style.color = "var(--clr-text-7)"
   document.getElementById("AlgoSigner").style.backgroundColor = "var(--clr-bg)"
   document.getElementById("myAlgoWallet").style.backgroundColor = "var(--clr-bg)"
-
+  toggleLoader("slider",true)
+  document.getElementById("check-vote").style.display = "none"
   Pipeline.pipeConnector = "WalletConnect"
-  Pipeline.connect(wallet).then(data => { log(data); close() })
+  Pipeline.connect(wallet).then(data => { log(data); close()
+  toggleLoader("slider",false)
+  document.getElementById("connected").style.display = "block"
+  document.getElementById("checked-vote").style.display = "block"
+  document.getElementById("connect-wallet").style.display = "none"
+  document.getElementById("log").style.display = "none"
+  document.getElementById("log-2").style.display = "block"
+ })
 }
 
 document.getElementById("AlgoSigner").onclick = () => {
@@ -100,8 +109,17 @@ document.getElementById("AlgoSigner").onclick = () => {
   document.getElementById("WalletConnect").style.color = "var(--clr-text-7)"
   document.getElementById("AlgoSigner").style.color = "var(--clr-text-5)"
   document.getElementById("myAlgoWallet").style.backgroundColor = "var(--clr-bg)"
+  toggleLoader("slider",true)
+  document.getElementById("check-vote").style.display = "none"
   Pipeline.pipeConnector = "AlgoSigner"
-  Pipeline.connect(wallet).then(data => { log(data); close() })
+  Pipeline.connect(wallet).then(data => { log(data); close()
+  toggleLoader("slider",false)
+  document.getElementById("connected").style.display = "block"
+  document.getElementById("checked-vote").style.display = "block"
+  document.getElementById("connect-wallet").style.display = "none"
+  document.getElementById("log").style.display = "none"
+  document.getElementById("log-2").style.display = "block"
+ })
 }
 
 document.getElementById("myAlgoWallet").onclick = () => {
@@ -112,9 +130,16 @@ document.getElementById("myAlgoWallet").onclick = () => {
   document.getElementById("myAlgoWallet").style.color = "var(--clr-text-5)"
   document.getElementById("WalletConnect").style.color = "var(--clr-text-7)"
   document.getElementById("AlgoSigner").style.color = "var(--clr-text-7)"
-
+  toggleLoader("slider",true)
+  document.getElementById("check-vote").style.display = "none"
   Pipeline.pipeConnector = "myAlgoWallet"
-  Pipeline.connect(wallet).then(data => { log(data); close() })
+  Pipeline.connect(wallet).then(data => { log(data); close()
+  toggleLoader("slider",false)
+  document.getElementById("connected").style.display = "block"
+  document.getElementById("checked-vote").style.display = "block"
+  document.getElementById("connect-wallet").style.display = "none"
+  document.getElementById("log").style.display = "none"
+  document.getElementById("log-2").style.display = "block" })
 }
 
 document.getElementById("optin").onclick = function () {
@@ -123,14 +148,20 @@ document.getElementById("optin").onclick = function () {
 }
 
 document.getElementById("vote").onclick = function () {
+  toggleLoader("slider-32",true)
   let appId = document.getElementById("appId").value
+  document.getElementById("verify-label-22").style.display = "none"
+  
   document.getElementById("check").disabled = false
   Pipeline.getAppCreator(appId).then(
     data => {
       let appArgs = ["vote", candidate]
       let assetIndex = document.getElementById("asset").value
       Pipeline.appCallWithTxn(appId, appArgs, data, 1, "vote", assetIndex).then(data => log("Transaction status: " + data))
+      document.getElementById("badge-verification-2").style.display = "none"
+      document.getElementById("badge-verified").style.display = "inline-block"
     })
+    
 }
 
 document.getElementById("toggle-css").onclick = toggleMode;
@@ -179,6 +210,15 @@ function setOpenSix() {
   let shown = showChart ? "block" : "none"
   showChart = !showChart
   document.getElementById("plotly-container").style.display = shown;
+}
+
+function toggleLoader(id = "",on = true){
+  if(on){
+    document.getElementById(id).style.display = "block"
+  }
+  else{
+    document.getElementById(id).style.display = "none"
+  }
 }
 
 function close() {
@@ -256,7 +296,6 @@ function setA() {
   document.getElementById("candidateb").style.backgroundColor = "var(--clr-bg)"
   document.getElementById("options-btn").style.backgroundColor = "var(--clr-text-3)"
   document.getElementById("vote").disabled = false
-  close()
 }
 
 function setB() {
@@ -267,7 +306,6 @@ function setB() {
   document.getElementById("candidatea").style.color = "var(--clr-text-7)"
   document.getElementById("options-btn").style.backgroundColor = "var(--clr-text-3)"
   document.getElementById("vote").disabled = false
-  close()
 }
 
 var chartData = [{
@@ -291,7 +329,7 @@ var layout = {
 };
 
 function log(data) {
-  document.getElementById("log").innerText = data
+  document.getElementById("log-2").innerText = data
 
 }
 
