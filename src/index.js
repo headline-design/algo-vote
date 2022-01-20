@@ -8,7 +8,7 @@ var candidate = ""
 
 var showChart = true
 
-//window.voteConfig = {title: "Got Snacks?", asaIndex: 547989587, appId: 547990100, a: "want snacks", b: "Do not want snacks"}
+//window.voteConfig = {title: "Got Snacks?", asaIndex: 555548568, appId: 555549943, a: "want snacks", b: "Do not want snacks"}
 
 document.getElementById("vote-root").innerHTML = `
 <br>
@@ -157,10 +157,12 @@ document.getElementById("vote").onclick = function () {
     data => {
       let appArgs = ["vote", candidate]
       let assetIndex = document.getElementById("asset").value
-      Pipeline.appCallWithTxn(appId, appArgs, data, 1, "vote", assetIndex).then(data => log("Transaction status: " + data))
-      document.getElementById("badge-verification-2").style.display = "none"
-      toggleLoader("slider-32",false)
-      document.getElementById("badge-verified").style.display = "inline-block"
+      Pipeline.appCallWithTxn(appId, appArgs, data, 1, "vote", assetIndex).then(data2 => 
+        {log("Transaction status: " + data2)
+        document.getElementById("badge-verification-2").style.display = "none"
+        toggleLoader("slider-32",false)
+        document.getElementById("badge-verified-2").style.display = "inline-block"
+      })
     })
     
 }

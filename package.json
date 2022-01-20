@@ -1,7 +1,7 @@
 {
   "name": "algo-vote",
   "homepage": "./",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Algorand Voting Dapp",
   "main": "index.html",
   "scripts": {
