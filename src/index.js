@@ -148,9 +148,9 @@ document.getElementById("optin").onclick = function () {
 }
 
 document.getElementById("vote").onclick = function () {
-  toggleLoader("slider-32",true)
   let appId = document.getElementById("appId").value
   document.getElementById("verify-label-22").style.display = "none"
+  toggleLoader("slider-32",true)
   
   document.getElementById("check").disabled = false
   Pipeline.getAppCreator(appId).then(
@@ -159,6 +159,7 @@ document.getElementById("vote").onclick = function () {
       let assetIndex = document.getElementById("asset").value
       Pipeline.appCallWithTxn(appId, appArgs, data, 1, "vote", assetIndex).then(data => log("Transaction status: " + data))
       document.getElementById("badge-verification-2").style.display = "none"
+      toggleLoader("slider-32",false)
       document.getElementById("badge-verified").style.display = "inline-block"
     })
     

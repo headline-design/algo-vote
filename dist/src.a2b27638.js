@@ -52662,9 +52662,9 @@ document.getElementById("optin").onclick = function () {
 };
 
 document.getElementById("vote").onclick = function () {
-  toggleLoader("slider-32", true);
   var appId = document.getElementById("appId").value;
   document.getElementById("verify-label-22").style.display = "none";
+  toggleLoader("slider-32", true);
   document.getElementById("check").disabled = false;
 
   _pipeline.default.getAppCreator(appId).then(function (data) {
@@ -52675,8 +52675,9 @@ document.getElementById("vote").onclick = function () {
       return log("Transaction status: " + data);
     });
 
+    document.getElementById("badge-verification-2").style.display = "none";
     toggleLoader("slider-32", false);
-    document.getElementById("badge-verified-2").style.display = "inline-block";
+    document.getElementById("badge-verified").style.display = "inline-block";
   });
 };
 
@@ -52882,7 +52883,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46779" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39913" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
